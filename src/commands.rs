@@ -183,7 +183,7 @@ impl Build {
                 Exec::cmd("nix")
                     .arg("build")
                     .args(&installable_args)
-                    .args(&["--log-format", "internal-json", "--verbose"])
+                    .args(&["--log-format", "internal-json", "--verbose", "--accept-flake-config"])
                     .args(&self.extra_args)
                     .stdout(Redirection::Pipe)
                     .stderr(Redirection::Merge)
